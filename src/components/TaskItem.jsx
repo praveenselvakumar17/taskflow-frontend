@@ -10,7 +10,9 @@ import axios from "axios";
 import { isToday, format } from "date-fns";
 import TaskModel from "./TaskModel";
 
-const API_BASE = "http://localhost:4000/api/tasks";
+const API_URL = import.meta.env.VITE_API_URL
+
+const API_BASE = `${API_URL}/api/tasks`;
 
 const TaskItem = ({ task, onRefresh, onLogout, showCompleteCheckbox }) => {
   const [isCompleted, setIsCompleted] = useState(false);

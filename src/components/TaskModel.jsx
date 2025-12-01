@@ -13,7 +13,9 @@ import {
   Flag,
 } from "lucide-react";
 
-const API_BASE = "http://localhost:4000/api/tasks";
+const API_URL = import.meta.env.VITE_API_URL
+
+const API_BASE = `${API_URL}/api/tasks`;
 
 const TaskModel = ({ isOpen, onClose, taskToEdit, onSave, onLogout }) => {
   const [taskData, setTaskData] = useState(DEFAULT_TASK);

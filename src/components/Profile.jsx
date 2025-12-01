@@ -5,7 +5,7 @@ import { BACK_BUTTON, DANGER_BTN, FULL_BUTTON, INPUT_WRAPPER, SECTION_WRAPPER, s
 import { ChevronLeft, LogOut, Save, Shield, UserCircle, Lock } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
-const API_URL = 'http://localhost:4000'
+const API_URL = import.meta.env.VITE_API_URL
 
 const Profile = ({ setCurrentUser, onLogout }) => {
 
