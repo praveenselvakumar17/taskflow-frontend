@@ -27,7 +27,7 @@ const SignUp = () => {
     setMessage({ text: "", type: "" });
 
     try {
-      const { data } = await axios.post(`${API_URL}/api/user/register`, formData);
+      const { data } = await axios.post(`${API_URL}api/user/register`, formData);
       console.log("SignUp Successful", data);
 
       setMessage({

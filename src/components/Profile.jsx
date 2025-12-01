@@ -18,7 +18,7 @@ const Profile = ({ setCurrentUser, onLogout }) => {
     if (!token) return
 
     axios
-      .get(`${API_URL}/api/user/me`, { headers: { Authorization: `Bearer ${token}` } })
+      .get(`${API_URL}api/user/me`, { headers: { Authorization: `Bearer ${token}` } })
       .then(({ data }) => {
         if (data.success)
           setProfile({ name: data.user.name, email: data.user.email })
@@ -37,7 +37,7 @@ const Profile = ({ setCurrentUser, onLogout }) => {
     try {
       const token = localStorage.getItem('token')
       const { data } = await axios.put(
-        `${API_URL}/api/user/profile`,
+        `${API_URL}api/user/profile`,
         { name: profile.name, email: profile.email },
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -69,7 +69,7 @@ const Profile = ({ setCurrentUser, onLogout }) => {
     try {
       const token = localStorage.getItem('token')
       const { data } = await axios.put(
-        `${API_URL}/api/user/password`,
+        `${API_URL}api/user/password`,
         { currentPassword: passwords.current, newPassword: passwords.new },
         { headers: { Authorization: `Bearer ${token}` } }
       )
