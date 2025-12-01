@@ -22,7 +22,7 @@ const Login = ({ onSubmit, onSwitchMode }) => {
     if (token) {
       (async () => {
         try {
-          const { data } = await axios.get(`${url}/api/user/me`, {
+          const { data } = await axios.get(`${API_URL}/api/user/me`, {
             headers: { Authorization: `Bearer ${token}` },
           })
 
@@ -49,7 +49,7 @@ const Login = ({ onSubmit, onSwitchMode }) => {
     setLoading(true)
 
     try {
-      const { data } = await axios.post(`${url}/api/user/login`, formData)
+      const { data } = await axios.post(`${API_URL}/api/user/login`, formData)
       if (!data.token) throw new Error(data.message || "Login Failed")
 
       localStorage.setItem("token", data.token)
